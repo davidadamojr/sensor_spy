@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menuStart"
+        app:showAsAction="always"
+        android:title="Start" />
+
+    <item
+        android:id="@+id/menuStop"
+        android:title="Stop"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menuDelete"
+        android:icon="@android:drawable/ic_menu_delete"
+        app:showAsAction="always"
+        android:title="Delete" />
+
+    <item
+        android:id="@+id/menuExport"
+        android:title="Export Data" />
+</menu>
