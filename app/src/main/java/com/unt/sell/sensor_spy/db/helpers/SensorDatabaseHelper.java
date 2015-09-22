@@ -12,7 +12,15 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.unt.sell.sensor_spy.db.schema.AccTable;
 import com.unt.sell.sensor_spy.db.schema.AmbTempTable;
+import com.unt.sell.sensor_spy.db.schema.GravityTable;
+import com.unt.sell.sensor_spy.db.schema.GyroTable;
+import com.unt.sell.sensor_spy.db.schema.HumidityTable;
+import com.unt.sell.sensor_spy.db.schema.LightTable;
+import com.unt.sell.sensor_spy.db.schema.LinearAccTable;
 import com.unt.sell.sensor_spy.db.schema.LocationTable;
+import com.unt.sell.sensor_spy.db.schema.MagFieldTable;
+import com.unt.sell.sensor_spy.db.schema.PressureTable;
+import com.unt.sell.sensor_spy.db.schema.ProximityTable;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,6 +38,7 @@ public class SensorDatabaseHelper extends SQLiteOpenHelper {
     private List<Integer> mSyncList = new ArrayList<Integer>();
 
     public SensorDatabaseHelper(Context context){
+        // creates database if it does not exist
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         mContext = context;
     }
@@ -44,6 +53,15 @@ public class SensorDatabaseHelper extends SQLiteOpenHelper {
     public void createTables(SQLiteDatabase database) {
         AccTable.onCreate(database);
         AmbTempTable.onCreate(database);
+        GravityTable.onCreate(database);
+        GyroTable.onCreate(database);
+        HumidityTable.onCreate(database);
+        LightTable.onCreate(database);
+        LinearAccTable.onCreate(database);
+        LocationTable.onCreate(database);
+        MagFieldTable.onCreate(database);
+        PressureTable.onCreate(database);
+        ProximityTable.onCreate(database);
     }
 
     // this method is called during an upgrade of the database

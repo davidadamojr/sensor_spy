@@ -8,7 +8,9 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.unt.sell.sensor_spy.adapters.SensorListAdapter;
@@ -112,6 +114,30 @@ public class MainActivity extends ListActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
+
+        int id = item.getItemId();
+        TextView statusText = (TextView) findViewById(R.id.status_text);
+
+        switch (id) {
+            case R.id.menuExport:
+                break;
+
+            case R.id.menuDelete:
+                break;
+
+            case R.id.menuStop:
+                getListView().setVisibility(View.VISIBLE);
+                statusText.setVisibility(View.INVISIBLE);
+                break;
+
+            case R.id.menuStart:
+                getListView().setVisibility(View.INVISIBLE);
+                statusText.setVisibility(View.VISIBLE);
+
+                // check which items are checked
+                // start the appropriate service for each checked item
+                break;
+        }
 
         return super.onOptionsItemSelected(item);
     }

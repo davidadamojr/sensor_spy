@@ -81,7 +81,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@android:style/Theme.Holo.Light.DarkActionBar">
+            android:theme="@android:style/Theme.Holo.Light.DarkActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -91,6 +91,26 @@
 
         <service
             android:name=".services.LocationMonitorService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+        <service
+            android:name=".services.GyroMonitorService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+        <service
+            android:name=".services.TempMonitorService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+        <service
+            android:name=".services.LightMonitorService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+        <service
+            android:name=".services.HumidityMonitorService"
             android:enabled="true"
             android:exported="true" >
         </service>
